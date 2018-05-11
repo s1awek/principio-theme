@@ -20,6 +20,8 @@ var cleanCSS = require( 'gulp-clean-css' );
 var gulpSequence = require( 'gulp-sequence' );
 var replace = require( 'gulp-replace' );
 var autoprefixer = require( 'gulp-autoprefixer' );
+var mysqlDump = require('mysqldump');
+var zip = require('gulp-zip');
 
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
@@ -83,7 +85,9 @@ gulp.task( 'sass', function() {
                 this.emit( 'end' );
             }
         } ) )
+        .pipe( sourcemaps.init() )
         .pipe( sass( { errLogToConsole: true } ) )
+        .pipe(sourcemaps.write())
         .pipe( autoprefixer( 'last 2 versions' ) )
         .pipe( gulp.dest( paths.css ) )
         .pipe( rename( 'custom-editor-style.css' ) );
@@ -94,7 +98,7 @@ gulp.task( 'sass', function() {
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task( 'watch', function() {
-    gulp.watch( paths.sass + '/**/*.scss', ['styles'] );
+    gulp.watch( [paths.sass + '/**/*.scss', paths.dev + '/**/*.scss'], ['styles'] );
     gulp.watch( [paths.dev + '/js/**/*.js', 'js/**/*.js', '!js/theme.js', '!js/theme.min.js'], ['scripts'] );
 
     //Inside the watch task.
@@ -248,6 +252,38 @@ gulp.task( 'copy-assets', function() {
         .pipe( gulp.dest( paths.js + paths.vendor ) );
     return stream;
 });
+
+// dumpDatabase
+gulp.task('sql', () => {
+    return new Promise((resolve, reject) => {
+        mysqlDump({
+            host: 'localhost',
+            user: 'root',
+            password: '',
+            database: 'test_test',
+            dest: 'backup.sql'
+        }, (err) => {
+            if (err !== null) return reject(err);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+});
+
+// zip database
+//TODO: find a way to encrypt archive
+gulp.task('zip', () =>
+    gulp.src('backup.sql')
+        .pipe(zip('archive.zip'))
+        .pipe(gulp.dest(paths.dev))
+);
+
+//dump databse and zip it
+gulp.task('database', ['sql', 'zip'], () => {
+
+});
+
 
 // Deleting the files distributed by the copy-assets task
 gulp.task( 'clean-vendor-assets', function() {
