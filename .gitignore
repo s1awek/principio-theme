@@ -1,2 +1,5 @@
 wp-admin/**/*
 wp-includes/**/*
+wp-content/themes/UnderStrap/node_modules/**/*
+.vscode/**/*
+wp-content/themes/UnderStrap/npm-debug.log
