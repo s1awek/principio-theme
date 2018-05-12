@@ -1,6 +1,7 @@
 wp-admin/**/*
 wp-includes/**/*
 wp-content/themes/UnderStrap/node_modules/**/*
+node_modules/**/*
 .vscode/**/*
 wp-content/themes/UnderStrap/npm-debug.log
 wp-content/themes/UnderStrap/.jshintrc

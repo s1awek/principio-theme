@@ -54,17 +54,16 @@
 
 // Custom control indicators
 //
-// Build the custom controls out of pseudo-elements.
+// Build the custom controls out of psuedo-elements.
 
 .custom-control-label {
-  position: relative;
   margin-bottom: 0;
 
   // Background-color and (when enabled) gradient
   &::before {
     position: absolute;
     top: (($line-height-base - $custom-control-indicator-size) / 2);
-    left: -$custom-control-gutter;
+    left: 0;
     display: block;
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
@@ -79,7 +78,7 @@
   &::after {
     position: absolute;
     top: (($line-height-base - $custom-control-indicator-size) / 2);
-    left: -$custom-control-gutter;
+    left: 0;
     display: block;
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
@@ -286,7 +285,7 @@
     bottom: 0;
     z-index: 3;
     display: block;
-    height: $custom-file-height-inner;
+    height: calc(#{$custom-file-height} - #{$custom-file-border-width} * 2);
     padding: $custom-file-padding-y $custom-file-padding-x;
     line-height: $custom-file-line-height;
     color: $custom-file-button-color;
@@ -299,7 +298,7 @@
 
 // Range
 //
-// Style range inputs the same across browsers. Vendor-specific rules for pseudo
+// Style range inputs the same across browsers. Vendor-specific rules for psuedo
 // elements cannot be mixed. As such, there are no shared styles for focus or
 // active states on prefixed selectors.
 
