@@ -32,6 +32,8 @@
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
     "graceful-fs": "^4.1.11",
+    "mysqldump": "^1.4.2",
+    "gulp-zip": "^4.1.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.2",
