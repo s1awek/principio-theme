@@ -230,7 +230,10 @@ gulp.task('sql', () => {
 //TODO: find a way to encrypt archive
 gulp.task('zip', () =>
     gulp.src('backup.sql')
-        .pipe(zip('archive.zip'))
+        .pipe(zip('archive.zip').on('error', (err) => {
+            console.log(err);
+            done(err);
+        }))
         .pipe(gulp.dest(paths.dev))
 );
 
