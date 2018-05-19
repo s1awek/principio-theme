@@ -2,3 +2,31 @@
 body {
     width: 100%; //Example rule
 }
+
+.bg-black {
+    background-color: $dark;
+}
+
+ul {
+    list-style: none;
+    li:not(.menu-item)::before {content: "•"; color: $accent-color;
+        display: inline-block; width: 0.7em;
+        margin-left: -1em
+    }
+}
+
+ol {
+    list-style: none; 
+    counter-reset: li;
+    li:not(.comment)::before {
+        counter-increment: li;
+        content: counter(li);
+        color: $accent-color;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1.5em;
+        margin-right: 0.5em;
+        text-align: right;
+        direction: rtl;
+    }
+}

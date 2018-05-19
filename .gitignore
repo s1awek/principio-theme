@@ -6,3 +6,4 @@ node_modules/**/*
 wp-content/themes/UnderStrap/npm-debug.log
 wp-content/themes/UnderStrap/.jshintrc
 wp-content/themes/UnderStrap/backup.sql
+wpcs/**/*
