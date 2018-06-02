@@ -10,6 +10,9 @@ $headings-color: #555555;
 $body-color: #333333;
 $active-background: #333333;
 $accent-color: #E41318;
+@mixin red-hover {
+    box-shadow: 0px 2px 0px 0px $accent-color;
+} 
 
 $border-radius:                 2px;
 

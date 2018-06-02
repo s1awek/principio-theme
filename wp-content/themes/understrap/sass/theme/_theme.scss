@@ -4,6 +4,10 @@
     background-color: $dark;
 }
 
+a {
+    color: darken($primary, 20%);
+}
+
 ul {
     list-style: none;
     li:not([class*=item])::before {content: "•"; color: $accent-color;
@@ -40,6 +44,32 @@ article, table, form {
     li {
         a {
             font-size: 1.2rem;
+            transition: all 0.45s ease-in-out;
+            &:hover {
+                @include red-hover;
+            }
         }
     }
+    > .active {
+        > a {
+            @include red-hover;
+        }
+    }
+}
+
+blockquote {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0.3rem;
+        content: '\201C';
+        font-size: 2.5rem;
+        line-height: 1rem;
+        color: $accent-color;
+    }
+
 }
