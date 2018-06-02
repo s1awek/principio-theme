@@ -31,3 +31,15 @@ ol {
 article, table, form {
     margin-bottom: 3rem;
 }
+
+.navbar {
+    border-bottom: 1px solid $light;
+}
+
+.navbar-nav {
+    li {
+        a {
+            font-size: 1.2rem;
+        }
+    }
+}
