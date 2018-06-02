@@ -3,10 +3,28 @@
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
 
-$primary: #777777; // Thats a sample how you could change a BootStrap variable.
+$primary: #333333; 
 $dark: #111111;
 $light: #cccccc;
 $headings-color: #555555;
 $body-color: #333333;
 $active-background: #333333;
 $accent-color: #E41318;
+
+$border-radius:               2px;
+
+$headings-margin-bottom:        0.7em;
+$headings-font-family:          Oswald, sans-serif;
+$font-family-base:             'Open Sans Condensed', sans-serif;
+$font-weight-base:             300;
+$headings-font-weight:         400;
+
+$btn-border-radius:           2px;
+$btn-border-radius-lg:        3px;
+$btn-border-radius-sm:        1px;
+$btn-border-width:            2px;
+
+$input-border-width:                2px;
+$input-border-radius:           2px;
+$input-border-radius-lg:        3px;
+$input-border-radius-sm:        1px;
