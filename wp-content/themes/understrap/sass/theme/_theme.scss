@@ -38,6 +38,10 @@ article, table, form {
 
 .navbar {
     border-bottom: 1px solid $light;
+    a {
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+    }
 }
 
 .navbar-nav {
@@ -72,4 +76,9 @@ blockquote {
         color: $accent-color;
     }
 
+}
+
+.wp-post-img {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

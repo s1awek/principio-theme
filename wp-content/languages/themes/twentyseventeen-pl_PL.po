@@ -274,13 +274,13 @@ msgstr "Rozwiń menu potomne"
 msgid "Social Links Menu"
 msgstr "Menu odnośników serwisów społecznościowych"
 
-#: template-parts/footer/site-info.php:13
+#: template-parts/footer/site-info.php:19
 msgid "Proudly powered by %s"
 msgstr "Dumnie wspierane przez WordPressa"
 
-#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.5)  #-#-#-#-#
+#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.6)  #-#-#-#-#
 #. Author URI of the plugin/theme
-#: template-parts/footer/site-info.php:13
+#: template-parts/footer/site-info.php:18
 msgid "https://wordpress.org/"
 msgstr "https://pl.wordpress.org/"
 
