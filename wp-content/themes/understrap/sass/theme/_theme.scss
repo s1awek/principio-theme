@@ -10,7 +10,8 @@ a {
 
 ul {
     list-style: none;
-    li:not([class*=item])::before {content: "•"; color: $accent-color;
+    li:not([class*=item])::before, li.cat-item::before {
+        content: "•"; color: $accent-color;
         display: inline-block; width: 0.7em;
         margin-left: -1em
     }
@@ -78,7 +79,52 @@ blockquote {
 
 }
 
-.wp-post-img {
-    margin-top: 10px;
-    margin-bottom: 10px;
+img.wp-post-image,
+article img,
+figure,
+img,
+#secondary img {
+  margin-bottom: 0.5rem;
+}
+
+.entry-meta {
+    color: $light;
+    a {
+        color: lighten($primary, 10%);
+    }
+}
+
+.tags-links {
+    a {
+        display: inline-block;
+        padding: 0 7px;
+        border-radius: $border-radius;
+        background-color: $lighter;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: darken($lighter, 10%);
+            text-decoration: none;
+        }
+    }
+}
+
+.entry-footer {
+    > span {
+        display: block;
+    }
+}
+
+.custom-logo-link {
+    img {
+        max-height: 50px;
+        margin-bottom: 0;
+    }
+}
+
+.nav-links {
+    .fa {
+        &:before {
+            color: $accent-color;
+        }
+    }
 }
